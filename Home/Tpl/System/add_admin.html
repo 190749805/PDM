@@ -1,0 +1,46 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script type="text/javascript" src="__PUBLIC__/Js/one.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+
+<div class="center">
+	<br/>
+	<p id="time">&nbsp;&nbsp;&nbsp;当前日期:<?php date_default_timezone_set('PRC'); echo date('Y/m/d');?></p>
+	<br/><br/>
+	<p class="info" style="margin-left:100px;">添加用户（管理）</p>
+
+	<form action="__URL__/add_admin_user" method="post">
+
+	<input type="submit" class="btn" value="添加"/>
+	<br/><br/>
+	<input type="reset" class="btn" value="取消"/>
+	<p style="margin-left:250px;font-size:18px;">用 户 名：</p>
+
+	<input style="margin-left:250px;width:300px;" type="text" placeholder="用户名由字母或中文组成" name="username" id="name" class=""/>
+
+	<p style="margin-left:250px;font-size:18px;">密 &nbsp;&nbsp;&nbsp; 码：</p>
+
+	<input style="margin-left:250px;width:300px;" type="text" readonly="true" name="password" id="name" value="123456" class=""/>
+
+
+	<p style="margin-left:250px;font-size:18px;">权 &nbsp;&nbsp;&nbsp; 限：</p>
+
+    <select style="margin-left:250px;width:300px;" name="qx" id="name">
+        <option value="一审管理员">一审管理员</option>
+        <option value="二审管理员">二审管理员</option>
+        <option value="三审管理员">三审管理员</option>
+    </select>
+	<p style="margin-left:250px;font-size:18px;">部 &nbsp;&nbsp;&nbsp; 门：</p>
+
+	<select style="margin-left:250px;width:300px;" name="bm">
+	<volist name="bm" id="bm">
+		{$bm}
+	</volist>
+	</select>
+
+	</form>
+	<br/><br/><br/><br/>
+</div>
+
+
+<include file='./Home/Tpl/Common/footer.html' />		
+<include file='./Home/Tpl/Common/foot.html' />

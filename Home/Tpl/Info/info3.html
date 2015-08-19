@@ -1,0 +1,117 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script src="__PUBLIC__/Js/Info/info3.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/three.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/Info/total.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+	<div class="center">
+	<p class="title">学历及社会经历</p>
+		<table class="info_table">
+			<tr>
+				<th>开始时间</th><th>结束时间</th><th>何地</th><th>院系/部门</th><th>专业/经历</th><th>任职或学习</th>
+				<th>修业年限</th><th>学历</th><th>证明人</th><th>操作</th>	
+			</tr>
+		<volist name="list" id="vo">
+			<tr>
+				<th>{$vo.kssj}</th><th>{$vo.jssj}</th><th>{$vo.hd}</th><th>{$vo.bm}</th><th>{$vo.zy}</th>
+				<th>{$vo.rzxx}</th><th>{$vo.xynx}</th><th>{$vo.xl}</th><th>{$vo.zmr}</th>
+				<th><a href="__URL__/info3/id/{$vo.id}">修改</a>
+					<a href="__URL__/delete_info3/id/{$vo.id}">删除</a>
+				</th>	
+			</tr>
+		</volist>
+		</table>
+			<form action="__URL__/commit_info3" method="post">
+			<input type="hidden" name="hidden" value="{$list1[0]['id']}" />
+				<br/>
+					<input class="btn save3"  type="submit" class="save3" value="保存"/>
+					<br/>
+					<br/>
+				<p class="name">开始时间:
+					<select name="kssjy" id="kssjy">
+						<volist name="year" id="year">
+							{$year}
+						</volist>
+						<volist name="yeara" id="yeara">
+							{$yeara}
+						</volist>
+					</select>年
+					<select name="kssjm" id="kssjm">
+						<volist name="month" id="month">
+							{$month}
+						</volist>
+						<volist name="montha" id="montha">
+							{$montha}
+						</volist>
+					</select>月
+				结束时间:
+					<select name="jssjy" id="jssjy">
+						<volist name="year1" id="year1">
+							{$year1}
+						</volist>
+						<volist name="yearb" id="yearb">
+							{$yearb}
+						</volist>
+					</select>
+                    <span id="span-m">年
+					<select name="jssjm" id="jssjm">
+						<volist name="month1" id="month1">
+							{$month1}
+						</volist>
+						<volist name="monthb" id="monthb">
+							{$monthb}
+						</volist>
+					</select>月
+                    </span>
+				</p>
+				<p class="name">何地(或何学校、或何单位):<input type="text" value="{$list1[0]['hd']}" name="hd" id="hd"/>
+				<b class="b-tishi" id="b-hd"></b></p>
+				<p class="name">院系（部门）:<input type="text" name="bm" value="{$list1[0]['bm']}" id="bm"/><b class="b-tishi" id="b-bm"></b></p>
+				<p class="name">专业（经历）:<input type="text" value="{$list1[0]['zy']}" name="zy" id="zy"/><b class="b-tishi" id="b-zy"></b></p>
+				<p class="name">任职或者学习:
+					<select name="rzxx" id="rzxx">
+						<volist name="rzxx" id="rzxx">
+							{$rzxx}
+						</volist>
+						<volist name="rzxxa" id="rzxxa">
+							{$rzxxa}
+						</volist>
+					</select>
+				</p>
+				<div id="div-xuexi">
+				<p class="name" id="p-nxxl">修业年限:
+					<select name="select-rzxx" id="select-rzxx">
+								<volist name="xynx" id="xynx">
+									{$xynx}
+								</volist>
+								<volist name="xynxa" id="xynxa">
+									{$xynxa}
+								</volist>
+					</select>年   
+					学历:<select name="select-xl" id="select-xl">
+							<volist name="xueli" id="xueli">
+								{$xueli}
+							</volist>
+							<volist name="xuelia" id="xuelia">
+								{$xuelia}
+							</volist>
+						</select>
+				</p>
+				</div>
+				<p class="name">证明人:<input type="text" name="zmr" id="zmr" value="{$list1[0]['zmr']}"/><b class="b-tishi" id="b-zmr"></b></p>
+				<if condition="$list1[0]['id'] eq null">
+				<p class="name"><button class="btn save3">增加</button></p>
+				<else/><p class="name"><button class="btn save3">修改</button></p>
+				</if>
+				
+				<div class="daohang">
+						<input type="button" onclick="window.location.href='__URL__/info2'" class="btn" value="上一页">
+						<for start="1" end="17">
+							<input type="button" onclick="window.location.href='__URL__/info{$i}'" class="btn" value="{$i}">
+						</for>
+						<input type="button" onclick="window.location.href='__URL__/info4'" class="btn" value="下一页">
+				</div>
+				<br/>
+			</form>
+		</div>
+<include file='./Home/Tpl/Common/footer.html' />
+<include file='./Home/Tpl/Common/foot.html' />

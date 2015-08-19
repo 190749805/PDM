@@ -1,0 +1,532 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script type="text/javascript" src="__PUBLIC__/Js/two.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/bootstrap.js"></script>
+<script src="__PUBLIC__/Js/audit.js"></script>
+<script src="__PUBLIC__/Js/reason.js"></script>
+<script src="__PUBLIC__/Js/showreason.js"></script>
+<style text="css/text">
+    .cl1{
+        color:green;
+    }
+    .cl2{
+        color:red;
+    }
+    .shenhe-head{
+        margin-left: 20px;
+    }
+</style>
+{$reason}
+<include file='./Home/Tpl/Common/header.html' />
+<div class="center">
+<br/>
+<h3 class="shenhe-head">*通过是<span style="color:green">绿色</span>，没有通过是<span style="color:red">红色</span></h3>
+
+<br/><br/><br/>
+
+<table class="tb" width="740px" cellpadding="2" cellspacing="0" border="1" align="center">
+<tbody>
+<tr>
+    <td class="td-a cl{$info1[0]['cp_name']}" data="user{$userid}name" colspan="2" style="height:35px;" ><strong>姓&nbsp;&nbsp;名</strong>
+
+        </td >
+    <td class="td-a cl{$info1[0]['cp_name']}" data="user{$userid}name">{$info1[0]['name']}</td >
+    <td class="td-a cl{$info1[0]['cp_sex']}" data="user{$userid}sex" ><strong>性&nbsp;&nbsp;别</strong>
+       </td >
+    <td class="td-a cl{$info1[0]['cp_sex']}" data="user{$userid}sex">{$info1[0]['sex']}</td >
+    <td class="td-a cl{$info1[0]['cp_csny']}" data="user{$userid}csny"><strong>出生年月</strong>
+       </td >
+    <td class="td-a cl{$info1[0]['cp_csny']}" data="user{$userid}csny">{$info1[0]['csny']}</td >
+    <td class="td-a"  rowspan="5" style="width:2.6cm;height:3.5cm;" data="user{$userid}zplj">
+
+        <img style="width:2.6cm;height:3.5cm;" src="{$info1[0]['zplj']}"></img><br/></td  >
+</tr>
+<tr>
+    <td class="td-a cl{$info1[0]['cp_mz']}"  colspan="2" data="user{$userid}mz"><strong>民族</strong>
+       </td>
+    <td class="td-a cl{$info1[0]['cp_mz']}" data="user{$userid}mz">{$info1[0]['mz']}</td >
+    <td class="td-a cl{$info1[0]['cp_jg']}" data="user{$userid}jg"><strong>籍贯</strong>
+       </td >
+    <td class="td-a cl{$info1[0]['cp_jg']}" data="user{$userid}jg">{$info1[0]['jg_pro']}<br/>{$info1[0]['jg_city']}</td >
+    <td class="td-a cl{$info1[0]['cp_jkzk']}" data="info{$infoid}jkzk"><strong>健康状况</strong>
+       </td >
+    <td class="td-a cl{$info1[0]['cp_jkzk']}" data="info{$infoid}jkzk">{$info2[0]['jkzk']}</td >
+</tr>
+<tr>
+    <td class="td-a cl{$info1[0]['cp_hscjdp']}" colspan="2" data="info{$infoid}hscjdp"><strong>何时参加何<br/>党&nbsp;&nbsp;&nbsp;派</strong>
+       </td >
+    <td class="td-a cl{$info1[0]['cp_hscjdp']}" data="info{$infoid}hscjdp">{$info2[0]['hscjdp']}<br/>{$info2[0]['cjdp']}</td >
+    <td class="td-a cl{$info1[0]['cp_pwhsp']}" data="info{$infoid}pwhsp"><strong>现任专业技术职务<br/>任职资格评委会和<br/>审批机关</strong>
+       </td >
+    <td class="td-a cl{$info1[0]['cp_pwhsp']}" colspan="3" data="info{$infoid}pwhsp">{$info2[0]['pwhsp']}</td >
+</tr>
+<tr>
+    <td class="td-a cl{$info1[0]['cp_zwhsj']}" colspan="2" data="info{$infoid}xrjszw"><strong>现职务及任现<br/>职务时间</strong>
+        </td >
+    <td class="td-a cl{$info1[0]['cp_zwhsj']}" colspan="1" data="info{$infoid}xrjszw">{$info2[0]['xrjszw']}<br/>{$info2[0]['xrzwsj']}</td >
+    <td class="td-a cl{$info1[0]['cp_xl']}" data="info{$infoid}xl"><strong>高校教龄</strong>
+      </td >
+    <td class="td-a cl{$info1[0]['cp_xl']}" data="info{$infoid}xl">{$info2[0]['xl']}</td >
+    <td class="td-a cl{$info1[0]['cp_npzw']}" data="info{$infoid}npzw"><strong>拟聘职务</strong>
+        </td >
+    <td class="td-a cl{$info1[0]['cp_npzw']}" data="info{$infoid}npzw">{$info1[0]['npzw']}</td >
+</tr>
+<tr>
+    <td class="td-a cl{$info1[0]['cp_cjgzsj']}" colspan="2" data="info{$infoid}cjgzsj"><strong>参加工作<br/>时&nbsp;&nbsp;&nbsp;&nbsp;间</strong>
+        </td >
+    <td class="td-a cl{$info1[0]['cp_cjgzsj']}" data="info{$infoid}cjgzsj">{$info2[0]['cjgzsj']}</td >
+    <td class="td-a cl{$info1[0]['cp_sfzh']}" data="info{$infoid}sfzh"><strong>身份证号码</strong>
+        </td >
+    <td class="td-a cl{$info1[0]['cp_sfzh']}" colspan="3" data="info{$infoid}sfzh">{$info1[0]['sfzh']}&nbsp;</td >
+</tr>
+
+<tr>
+    <td class="td-a" colspan="2"><br/><strong>何时、何校获<br/>何种学位<br/><br/></td >
+    <td class="td-a" colspan="6">
+        <volist name="info4" id="xw">
+            <p class="cl{$xw.xwqk}" data="xw{$xw.id}">{$xw.kssj}至{$xw.swsj}获{$xw.byxx}{$xw.xwlx}{$xw.xw}学位
+
+            </p>
+
+        </volist>
+        &nbsp;</td >
+</tr>
+<tr>
+    <td class="td-a" colspan="2"><strong>国内外留学、<br/>进修的学校、<br/>时间和内容</strong></td>
+    <td class="td-a" colspan="6">
+        <volist name="info5" id="gnw">
+            <p class="cl{$gnw.jxqk}" data="gnwjx{$gnw.id}">{$gnw.kssj}至{$gnw.jssj} {$gnw.xx} {$gnw.lb}
+
+        </volist>
+        &nbsp;</td >
+</tr>
+<tr>
+    <td class="td-a cl{$info1[0]['cp_zyzc']}" colspan="2" data="info{$infoid}zyzc"><strong>现从事专业<br/>及&nbsp;专&nbsp;长</strong>
+       </td >
+    <td class="td-a cl{$info1[0]['cp_zyzc']}" colspan="2" data="info{$infoid}zyzc">专业:{$info2[0]['xcszy']}<br/>专长:{$info2[0]['xcszc']}</td >
+    <td class="td-a cl{$info1[0]['cp_xsttzw']}" colspan="2" data="info{$infoid}xsttzw"><strong>参加何学术团<br/>体、任何职务</strong>
+       </td >
+    <td class="td-a cl{$info1[0]['cp_xsttzw']}" colspan="2" data="info{$infoid}xsttzw">{$info2[0]['cjxstt']}<br/>{$info2[0]['rhzw']}&nbsp;</td >
+</tr>
+<tr>
+    <td class="td-a cl{$info1[0]['cp_dzzw']}" colspan="2" data="info{$info}drdzzw">
+        <strong>担(兼)任党政<br/>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务</strong>
+       </td >
+    <td class="td-a cl{$info1[0]['cp_dzzw']}" colspan="2" data="info{$info}drdzzw">{$info2[0]['drdzzw']}&nbsp;</td >
+    <td class="td-a cl{$info1[0]['cp_shjz']}" colspan="2" data="info{$info}shjz"><strong>社&nbsp;会&nbsp;兼&nbsp;职</strong>
+        </td >
+    <td class="td-a cl{$info1[0]['cp_shjz']}" colspan="2" data="info{$info}shjz">{$info2[0]['shjz']}&nbsp;</td >
+</tr>
+<tr>
+    <td class="td-a cl{$info1[0]['cp_xkz']}" colspan="2" data="info{$info}xkz"><strong>学&nbsp;科&nbsp;组</strong>
+       </td>
+    <td class="td-a cl{$info1[0]['cp_xkz']}" colspan="2" data="info{$info}xkz">校内:{$info2[0]['xnxkz']} <br/>校外:{$info2[0]['xwxkz']}</td>
+    <td class="td-a cl{$info1[0]['cp_xk']}" colspan="2" data="info{$info}xk"><strong>学&nbsp;&nbsp;科</strong>
+       </td>
+    <td class="td-a cl{$info1[0]['cp_xk']}" colspan="2" data="info{$info}xk">{$info2[0]['xk']}&nbsp;</td>
+</tr>
+</table>
+<hr class="hr">
+<table cellpadding="2" width="740px" class="tb" cellspacing="0" border="1" align=center>
+    <tr>
+        <td colspan="9" data="info{$info}hjzs"><strong>教学获奖情况综述:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="8" class="cl{$info1[0]['cp_hjzs']}" data="info{$info}hjzs"><textarea class="cl{$info1[0]['cp_hjzs']}" style="outline:none;border:0px" cols="88" rows="5">{$info2[0]['hjzs']}</textarea></td>
+
+
+        </td>
+    </tr>
+    <tr>
+        <td class="td-a"><strong><br/>状态</strong><br/><br/></td >
+        <td class="td-a"><strong><br/>何时</strong><br/><br/></td >
+        <td class="td-a"><strong><br/>名称或者事宜</strong><br/><br/></td >
+        <td class="td-a"><strong><br/>单位或者地点</strong><br/><br/></td >
+        <td class="td-a"><strong><br/>荣誉称号</strong><br/><br/></td >
+        <td class="td-a"><strong><br/>级别</strong><br/><br/></td >
+        <td class="td-a"><strong><br/>等级</strong><br/><br/></td >
+        <td class="td-a"><strong><br/>排名</strong><br/><br/></td >
+        <volist name="info6" id="jf">
+            <tr class="cl{$jf.jfqk}" data="jf{$jf.id}">
+                <td class="td-a">{$jf.status}</td>
+                <td class="td-a">{$jf.time}</td>
+                <td class="td-a">{$jf.mcsy}</td>
+                <td class="td-a">{$jf.dd}</td>
+                <td class="td-a">{$jf.ch}</td>
+                <td class="td-a">{$jf.jb}</td>
+                <td class="td-a">{$jf.dj}</td>
+                <td class="td-a">{$jf.pm}</td>
+
+            </tr>
+        </volist>
+        </tbody>
+</table>
+<br />
+<hr class="hr">
+<table cellpadding="2" width="740px" class="tb" cellspacing="0" border="1" align=center>
+    <tbody>
+    <tr>
+        <td class="td-a" colspan="10"><br/><strong>主&nbsp;&nbsp;&nbsp;&nbsp;要&nbsp;&nbsp;&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;历&nbsp;&nbsp;&nbsp;&nbsp;
+            及&nbsp;&nbsp;&nbsp;&nbsp;社&nbsp;&nbsp;&nbsp;&nbsp;会&nbsp;&nbsp;&nbsp;&nbsp;经&nbsp;&nbsp;&nbsp;&nbsp;历</strong><br/><br/></td >
+    </tr>
+    <tr>
+        <td class="td-a"><br/><strong>自何年何月</strong><br/><br/></td >
+        <td class="td-a"><br/><strong>至何年何月</strong><br/><br/></td >
+        <td class="td-a"><br/><strong>在何地</strong><br/><br/></td >
+        <td class="td-a"><br/><strong>何学校(部门)</strong><br/><br/></td >
+        <td class="td-a"><br/><strong>任职（或学习）</strong><br/><br/></td >
+        <td class="td-a"><br/><strong>专业</strong><br/><br/></td >
+        <td class="td-a"><br/><strong>学历</strong><br/><br/></td >
+        <td class="td-a"><br/><strong>修业年限</strong><br/><br/></td >
+        <td class="td-a"><br/><strong>证&nbsp;明&nbsp;人</strong><br/><br/></td >
+    </tr>
+    <volist name="info8" id="xl">
+        <tr class="cl{$xl.xlqk}" data="xl{$xl.id}">
+            <td class="td-a"><br/>{$xl.kssj}<br/><br/></td >
+            <td class="td-a"><br/>{$xl.jssj}<br/><br/></td >
+            <td class="td-a"><br/>{$xl.bm} <br/><br/></td >
+            <td class="td-a"><br/>{$xl.zy}<br/><br/></td >
+            <td class="td-a"><br/>{$xl.rzxx}<br/><br/></td >
+            <td class="td-a"><br/>{$xl.zy}<br/><br/></td >
+            <td class="td-a"><br/>{$xl.xl}<br/><br/></td >
+            <td class="td-a"><br/>{$xl.xynx}<br/><br/></td >
+            <td class="td-a"><br/>{$xl.zmr}<br/><br/></td >
+
+        </tr>
+    </volist>
+    </tbody>
+</table>
+<br />
+<br />
+<hr class="hr">
+<div class="PageNext"></div>
+<br/>
+<br/>
+<table cellpadding="2" width="740px" class="tb" border="1" cellspacing="0" align="center">
+    <tr>
+        <td colspan="2" class="td-a cl{$info1[0]['cp_grzj']}" data="info{$infoid}brzj"><strong>本&nbsp;&nbsp;人&nbsp;&nbsp;总&nbsp;&nbsp;结<br/>
+            （任现职以来的思想政治表现，教学、科学研究等工作的能力及履行职责的情况、成绩等）</strong></td >
+    </tr>
+    <tr>
+        <td class="td-a" data="info{$infoid}brzj"><textarea class="cl{$info1[0]['cp_grzj']}" style="outline:none;border:0px" cols="88" rows="10">{$info2[0]['brzj']}</textarea></td >
+
+    </tr>
+</table>
+<hr class="hr">
+<br/>
+<br/>
+<div class="PageNext"></div>
+<table cellpadding="2" class="tb" cellspacing="0" border="1" align=center width="740px">
+    <tr>
+        <td class="td-a" colspan="9"><strong><br/>任  现  职  以  来  完  成  教  学  工  作  情 况</strong></td >
+    </tr>
+    <tr>
+        <td colspan="9" data="info{$infoid}rwgs"><strong>教学授课及其他教学任务概述:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="8" class="cl{$info1[0]['cp_jxrwzs']}" data="info{$infoid}rwgs"><textarea class="cl{$info1[0]['cp_jxrwzs']}" style="outline:none;border:0px" cols="88" rows="5">{$info2[0]['rwgs']}</textarea></td>
+
+    </tr>
+    <tr>
+        <td class="td-a"><strong>自何年何月</strong></td >
+        <td class="td-a"><strong>至何年何月</strong></td >
+        <td class="td-a"><strong>讲授课程名称及其它教学<br/>任       务</strong></td >
+        <td class="td-a"><strong>任务类型</strong></td >
+        <td class="td-a"><strong>学生<br/>人数</strong></td >
+        <td class="td-a"><strong>周学<br/>时数</strong></td >
+        <td class="td-a"><strong>总学<br/>时数</strong></td >
+        <td class="td-a"><strong>备 注</strong></td >
+
+    </tr>
+    <volist name="info9" id="jxgz">
+        <tr class="cl{$jxgz.jxgzqk}" data="xzwcgz{$jxgz.id}">
+            <td class="td-a"><br/>{$jxgz.kssj}<br/><br/></td >
+            <td class="td-a"><br/>{$jxgz.jssj}<br/><br/></td >
+            <td class="td-a"><br/>{$jxgz.mcrw}<br/><br/></td >
+            <td class="td-a"><br/>{$jxgz.lx}<br/><br/></td >
+            <td class="td-a"><br/>{$jxgz.xsrs}<br/><br/></td >
+            <td class="td-a"><br/>{$jxgz.zhxss}<br/><br/></td >
+            <td class="td-a"><br/>{$jxgz.zxss}<br/><br/></td >
+            <td class="td-a"><br/>{$jxgz.bz}<br/><br/></td >
+
+        </tr>
+    </volist>
+</table>
+<hr class="hr">
+<br/>
+<br/>
+<br/>
+<div class="PageNext"></div>
+<table border="1" align="center" width="740px" class="tb" cellspacing="0">
+    <tr>
+        <td class="td-a" colspan="8"><strong><br/>任现职以来完成教改项目情况</strong></td>
+    </tr>
+    <tr>
+        <td colspan="8" data="info{$infoid}gggz}"><strong>教学管理、教学改革工作综述:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="7" class="cl{$info1[0]['cp_jxggzs']}" data="info{$infoid}gggz}"><textarea class="cl{$info1[0]['cp_jxggzs']}" style="outline:none;border:0px" cols="88" rows="5">{$info2[0]['gggz']}</textarea></td>
+
+    </tr>
+    <tr>
+        <td class="td-a"><strong>项目名称</strong></td>
+        <td class="td-a"><strong>项目级别</strong></td>
+        <td class="td-a"><strong>项目来源</strong></td>
+        <td class="td-a"><strong>开始时间</strong></td>
+        <td class="td-a"><strong>结束时间</strong></td>
+        <td class="td-a"><strong>结题或在研</strong></td>
+        <td class="td-a"><strong>排名</strong></td>
+
+    </tr>
+    <volist name="info13" id="jgxm">
+        <tr class="cl{$jgxm.jgxmqk}" data="jgxm{$jgxm.id}">
+            <td class="td-a"><br/>{$jgxm.xmmc}<br/><br/></td>
+            <td class="td-a"><br/>{$jgxm.jb}<br/><br/></td>
+            <td class="td-a"><br/>{$jgxm.ly}<br/><br/></td>
+            <td class="td-a"><br/>{$jgxm.kssj}<br/><br/></td>
+            <td class="td-a"><br/>{$jgxm.jssj}<br/><br/></td>
+            <td class="td-a"><br/>{$jgxm.jz}<br/><br/></td>
+            <td class="td-a"><br/>{$jgxm.pm}<br/><br/></td>
+
+        </tr>
+    </volist>
+</table>
+<hr class="hr">
+<br/>
+<br/>
+<div class="PageNext"></div>
+<table border="1" align="center" width="740px" class="tb" cellspacing="0">
+    <tr>
+        <td class="td-a" colspan="9"><br/><strong>考试情况</strong></td>
+    </tr>
+    <tr>
+        <td class="td-a"><strong>英语免试原因</strong></td>
+        <td class="td-a"><strong>英语考试级别</strong></td>
+        <td class="td-a"><strong>英语考试时间</strong></td>
+        <td class="td-a"><strong>英语成绩</strong></td>
+        <td class="td-a"><strong>计算机免试原因</strong></td>
+        <td class="td-a"><strong>计算机考试级别</strong></td>
+        <td class="td-a"><strong>计算机考试时间</strong></td>
+        <td class="td-a"><strong>计算机成绩</strong></td>
+     
+    </tr>
+    <volist name="info14" id="ks">
+        <tr class="cl{$ks.ksqk}"  data="ks{$ks.id}">
+            <td class="td-a"><br/>{$ks.yyms}<br/><br/></td>
+            <td class="td-a"><br/>{$ks.yyjb}<br/><br/></td>
+            <td class="td-a"><br/>{$ks.yysj}<br/><br/></td>
+            <td class="td-a"><br/>{$ks.yycj}<br/><br/></td>
+            <td class="td-a"><br/>{$ks.jsjms}<br/><br/></td>
+            <td class="td-a"><br/>{$ks.jsjjb}<br/><br/></td>
+            <td class="td-a"><br/>{$ks.jsjsj}<br/><br/></td>
+            <td class="td-a"><br/>{$ks.jsjcj}<br/><br/></td>
+          
+        </tr>
+    </volist>
+</table>
+<hr class="hr">
+<br/>
+<br/>
+<div class="PageNext"></div>
+<table class="tb" border="1" align="center" width="740px" cellspacing="0">
+    <tr>
+        <td class="cl{$info1[0]['cp_zdyjs']}" data="info{$infoid}zdyjs}"><textarea class="cl{$info1[0]['cp_zdyjs']}" style="outline:none;border:0px" cols="88" rows="10">{$info2[0]['zdyjs']}</textarea></td >
+
+        <td class="td-a cl{$info1[0]['cp_zdyjs']}" >指<br/>导<br/>研<br/>究<br/>生<br/>
+            </td >
+    </tr>
+    <tr>
+        <td class="cl{$info1[0]['cp_zdjs']}" data="info{$infoid}zdjstg}"><textarea class="cl{$info1[0]['cp_zdjs']}" style="outline:none;border:0px" cols="88" rows="10">{$info2[0]['zdjstg']}</textarea></td >
+
+        <td class="td-a cl{$info1[0]['cp_zdjs']}">指<br/>导<br/>教<br/>师<br/>提<br/>高<br/>
+           </td >
+    </tr>
+    <tr>
+        <td class="cl{$info1[0]['cp_sysgx']}" data="info{$infoid}sysgx}"><textarea class="cl{$info1[0]['cp_sysgx']}" style="outline:none;border:0px" cols="88" rows="10">{$info2[0][sysgx]}</textarea></td >
+
+        <td class="td-a cl{$info1[0]['cp_sysgx']}">对<br/>实<br/>验<br/>室<br/>贡<br/>献<br/>
+           </td >
+    </tr>
+    <tr>
+        <td class="cl{$info1[0]['cp_wycd']}" data="info{$infoid}wycd}"><textarea class="cl{$info1[0]['cp_wycd']}" style="outline:none;border:0px" cols="88" rows="10">{$info2[0]['wycd']}</textarea></td >
+
+        <td class="td-a cl{$info1[0]['cp_wycd']}">外<br/>语<br/>程<br/>度<br/>
+            
+            <span id="span_wycd"></span></td >
+    </tr>
+    <tr>
+        <td class="cl{$info1[0]['cp_jsjsp']}" data="info{$infoid}jsjsp}"><textarea class="cl{$info1[0]['cp_jsjsp']}" style="outline:none;border:0px" cols="88" rows="10">{$info2[0]['jsjsp']}</textarea></td >
+        <td class="td-a cl{$info1[0]['cp_jsjsp']}">计<br/>算<br/>机<br/>应<br/>用<br/>水<br/>平<br/>
+           </td >
+    </tr>
+</table>
+<hr class="hr">
+<br/>
+<br/>
+<br/>
+
+<table border="1" width="740px" cellspacing="0" class="tb" align="center">
+    <tr>
+        <td class="td-a" colspan="3">任现职以来发表的论（译）著、教科书、教学研究或<br/>
+            在实验及其它科学技术工作方面的成果
+        </td >
+    </tr>
+    <tr>
+        <td colspan="3" data="info{$infoid}zpzs}"><strong>主要论文、著作综述：:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="3" class="cl{$info1[0]['cp_lwzzzs']}" data="info{$infoid}zpzs}"><textarea class="cl{$info1[0]['cp_lwzzzs']}" style="outline:none;border:0px" cols="88" rows="5">{$info2[0]['zpzs']}&nbsp;</textarea></td>
+
+    </tr>
+    <tr>
+        <td class="td-a" width="30%">题&nbsp;&nbsp;&nbsp;目</td >
+        <td class="td-a">何时在何刊物发表或出版社出版</td >
+        <td class="td-a">本人承担的部分</td >
+    </tr>
+    <tr>
+        <td colspan="4"><strong>发表论文:</strong></td>
+    </tr>
+
+    <volist name="info10" id="fblw">
+        <tr class="cl{$fblw.fblwqk}" data="fblwl{$fblw.id}">
+            <td class="td-a"><br/>{$fblw.title}<br/><br/></td >
+            <td class="td-a"><br/>{$fblw.time}、{$fblw.status}增刊、{$fblw.jb}、 由{$fblw.slmc}收录、检索类别是{$fblw.js}<br/><br/></td >
+            <td class="td-a"><br/>{$fblw.pm}<br/><br/></td >
+
+        </tr>
+    </volist>
+    <tr>
+        <td colspan="4"><strong>个人著作:</strong></td>
+    </tr>
+    <volist name="info11" id="zzl">
+        <tr class="cl{$zzl.zzlqk}" data="zzl{$zzl.id}">
+            <td class="td-a"><br/>{$zzl.mc}<br/><br/></td >
+            <td class="td-a">{$zzl.cbsj} 、类别:{$zzl.lb} 、承担：{$zzl.cdbf}、
+                <br/>由{$zzl.cbs}出版、
+                编写{$zzl.sm}章{$zzl.num}千字</td >
+            <td class="td-a"><br/>{$zzl.cdbf}<br/><br/></td >
+
+        </tr>
+    </volist>
+    <tr>
+        <td colspan="4"><strong>教材说明:</strong></td>
+    </tr>
+    <volist name="info17" id="jc">
+        <tr class="cl{$jc.jcqk}" data="jc{$jc.id}">
+            <td class="td-a"><br/>{$jc.mc}<br/><br/></td >
+            <td class="td-a"><br/>{$jc.cbsj} 、类别:{$jc.lb} 、承担：{$jc.cdbf}、<br/>
+                由{$jc.cbs}出版、
+                编写{$jc.qksm}章{$jc.num}千字<br/><br/></td >
+            <td class="td-a"><br/>{$jc.cdbf}<br/><br/></td >
+
+        </tr>
+    </volist>
+</table>
+<hr class="hr">
+<br/>
+<br/>
+<br/>
+<div class="PageNext"></div>
+<table border="1" width="740px" cellspacing="0" class="tb" align="center">
+    <tr>
+        <td class="td-a" colspan="6">任&nbsp;&nbsp;现&nbsp;&nbsp;职&nbsp;&nbsp;以&nbsp;&nbsp;来&nbsp;&nbsp;主&nbsp;&nbsp;
+            要&nbsp;&nbsp;科&nbsp;&nbsp;研&nbsp;&nbsp;成&nbsp;&nbsp;果&nbsp;&nbsp;目&nbsp;&nbsp;录
+        </td >
+    </tr>
+    <tr>
+        <td colspan="6" data="info{$infoid}xmzs}"><strong>科研项目及获奖情况综述：:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="6" class="cl{$info1[0]['cp_kyhjzs']}"><textarea class="cl{$info1[0]['cp_kyhjzs']}" style="outline:none;border:0px" cols="88" rows="5">{$info2[0]['xmzs']}&nbsp;</textarea></td>
+
+    </tr>
+    <tr>
+        <td colspan="6"><strong>科研项目:</strong></td>
+    </tr>
+    <tr>
+        <td class="td-a">时&nbsp;&nbsp;&nbsp;间</td >
+        <td class="td-a">项  目  编  号</td >
+		<td class="td-a">科  研  项  目</td >
+        <td class="td-a">项目来源</td >
+        <td class="td-a">项目排名</td >
+        <td class="td-a">本 人 承 担 任 务</td >
+        <td class="td-a">完 成 任 务 情 况</td >
+    </tr>
+    <volist name="info12" id="kyxm">
+        <tr class="cl{$kyxm.kyxmqk}" data="kyxm{$kyxm.id}">
+            <td class="td-a"><br/>{$kyxm.qzsj}<br/><br/></td >
+            <td class="td-a"><br/>{$kyxm.bh}<br/><br/></td >
+			<td class="td-a"><br/>{$kyxm.kyxm}<br/><br/></td >
+            <td class="td-a"><br/>{$kyxm.xmly}<br/><br/></td >
+            <td class="td-a"><br/>{$kyxm.pm}<br/><br/></td >
+            <td class="td-a"><br/>{$kyxm.cdrw}<br/><br/></td >
+            <td class="td-a"><br/>{$kyxm.wcqk}<br/><br/></td >
+        </tr>
+    </volist>
+    <tr>
+        <td colspan="6"><strong>科研获奖:</strong></td >
+    </tr>
+    <tr>
+        <td class="td-a"><strong>获奖时间</strong></td>
+        <td class="td-a"><strong>获奖名称</strong></td>
+        <td class="td-a"><strong>获奖单位</strong></td>
+        <td class="td-a"><strong>获奖级别</strong></td>
+        <td class="td-a"><strong>获奖成果</strong></td>
+        <td class="td-a"><strong>个人排名</strong></td>
+    </tr>
+    <volist name="info15" id="kyhj">
+        <tr class="cl{$kyhj.kyhjqk}" data="kyhj{$kyhj.id}">
+            <td class="td-a"><br/>{$kyhj.sj}<br/><br/></td >
+            <td class="td-a"><br/>{$kyhj.mc}<br/><br/></td >
+            <td class="td-a"><br/>{$kyhj.dw}<br/><br/></td >
+            <td class="td-a"><br/>{$kyhj.jb}<br/><br/></td >
+            <td class="td-a"><br/>{$kyhj.cg}<br/><br/></td >
+            <td class="td-a"><br/>{$kyhj.pm}<br/><br/></td >
+
+
+        </tr>
+    </volist>
+    <tr>
+        <td colspan="6"><strong>发明专利:</strong></td >
+    </tr>
+    <tr>
+        <td class="td-a"><strong>专利通过时间</strong></td>
+        <td class="td-a"><strong>专利名称</strong></td>
+        <td class="td-a"><strong>专利类型</strong></td>
+        <td class="td-a"><strong>是否授权</strong></td>
+        <td class="td-a"><strong>专利号</strong></td>
+		<td class="td-a"></td>
+    </tr>
+    <volist name="info16" id="fmzl">
+        <tr class="cl{$fmzl.fmzlqk}" data="fmzl{$fmzl}">
+            <td class="td-a"><br/>{$fmzl.tgsj}<br/><br/></td >
+            <td class="td-a"><br/>{$fmzl.mc}<br/><br/></td >
+            <td class="td-a"><br/>{$fmzl.lx}<br/><br/></td >
+            <td class="td-a"><br/>{$fmzl.sq}<br/><br/></td >
+            <td class="td-a"><br/>{$fmzl.zlh}<br/><br/></td >
+			<td class="td-a"></td>
+
+        </tr>
+    </volist>
+</table>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <code class="modal-title" id="myModalLabel">未通过原因</code>
+            </div>
+            <div class="modal-body" style="padding:0;">
+                <textarea id="reason" style="width:100%;height:200px;"></textarea>
+            </div>
+            <div class="modal-footer" style="padding:19px 20px 0px 20px;margin-top:0px;">
+                <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<br/><br/><br/>
+</div>
+<include file='./Home/Tpl/Common/footer.html' />
+<include file='./Home/Tpl/Common/foot.html' />

@@ -1,0 +1,35 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script type="text/javascript" src="__PUBLIC__/Js/four.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/printpdf.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+		
+	<div class="center">
+	<br/>
+		<div class="row">
+			<div class="col-md-2">
+				<p id="time">&nbsp;&nbsp;&nbsp;当前日期:<?php date_default_timezone_set('PRC'); echo date('Y:m:d');?></?php></p>
+			</div>
+		</div>
+		<br/><br/>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-10">
+				<span>下载须知</span>
+				<span><br/>&nbsp;&nbsp;&nbsp;&nbsp;1.下载分为两个部分。（申报表部分下载与简表部分下载）</span>
+				<span><br/>&nbsp;&nbsp;&nbsp;&nbsp;2.申报表部分下载与简表部分下载均可在预览打印信息页面中浏览。</span>
+				<span><br/>&nbsp;&nbsp;&nbsp;&nbsp;3.申报表部分下载与简表部分内容须在确认无误时点击下载。</span>
+				<br/><br/><br/>
+			</div>	
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-4"><a href="__APP__/Print/print_pdf_sb"><button id="" class="btn">申报表部分下载</button></a><br/><br/><br/></div>	
+			<div class="col-md-4"><a href="__APP__/Print/print_pdf_jb"><button id="" class="btn">简表部分下载</button></a><br/><br/><br/></div>	
+			<br/><br/><br/><br/><br/><br/>
+			<br/><br/><br/><br/><br/>
+			<br/><br/><br/><br/><br/>
+		</div>
+	</div>
+		
+<include file='./Home/Tpl/Common/footer.html' />		
+<include file='./Home/Tpl/Common/foot.html' />

@@ -1,0 +1,45 @@
+@media print{
+	body{
+		background:none;
+		background-color: white;
+		margin: 2.5em 3em 0em 3em;
+	}
+	p.title{
+		font-weight:bold;
+		text-align:center;
+		font-size:8.42mm;
+		
+		letter-spacing:-0.05em;
+	}
+	table.first_table{
+		margin-top:0.7em;
+		border:0px;
+		text-align:center;
+		margin-left:16%;
+		line-height: 144%;
+	}
+	td.td_first_title{
+		width:3.0cm;
+		font-size:5.23mm;
+		padding-top:12px;
+		margin-right:2em;
+	}
+	td.td_first_value{
+		font-weight:bold;
+		margin-left:1em;
+		width:6cm;
+		font-size:5.55mm;
+		padding-top:2mm;
+		padding-bottom:2mm;
+		border-bottom: 1px solid #000000;
+		letter-spacing:-0.05em;
+	}
+	p.first_foot_p{
+		margin-top:3.5em;
+		margin-left:30%;
+		text-align:center;
+		font-size:5.23mm;
+		width:6.5cm;
+		line-height: 200%;
+	}
+}

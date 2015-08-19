@@ -1,0 +1,103 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script src="__PUBLIC__/Js/Info/info7.js"></script>
+<script src="__PUBLIC__/Js/Info/total.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/three.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+<div class="center">
+<form action="__URL__/commit_info7" method="post">
+	<input type="hidden" name="hidden" value="{$va[0]['id']}"/>
+	<p class="title">任现职以来教学奖惩情况</p>
+	<table class="info_table">
+		<tr>
+			<th>情况</th><th>时间</th><th>名称或事宜</th><th>单位或地点</th>
+			<th>获奖级别</th><th>获奖等级</th><th>排名</th><th>荣誉称号</th><th>备注</th>
+			<th>操作</th>
+		</tr>
+		<volist name="list" id="vo">
+		<tr>
+			<th>{$vo.status}</th><th>{$vo.time}</th><th>{$vo.mcsy}</th><th>{$vo.dd}</th>
+			<th>{$vo.jb}</th><th>{$vo.dj}</th><th>{$vo.pm}</th><th>{$vo.ch}</th><th>{$vo.bz}</th><th>
+			<a href="__URL__/info7/id/{$vo.id}">修改</a>
+			<a href="__URL__/delete_info7/id/{$vo.id}">删除</a>
+			</th>
+		</tr>
+		</volist>
+	</table>
+	<br/>
+			<input class="btn save7"  type="submit" value="保存"/>
+			<br/>
+			<br/>
+	<p class="name">情况:<select name="status" name="status" id="status">
+		<volist name="qk" id="qk">
+			{$qk}
+		</volist>
+		<volist name="qka" id="qka">
+			{$qka}
+		</volist>
+		</select></p>
+	<span id="span-hjqk">
+	<p class="name">时间:
+		<select name="timey">
+			<volist name="year" id="year">
+				{$year}
+			</volist>
+			<volist name="yeara" id="yeara">
+				{$yeara}
+			</volist>
+		</select>年
+		<select name="timem">
+			<volist name="month" id="month">
+				{$month}
+			</volist>
+			<volist name="montha" id="montha">
+				{$montha}
+			</volist>
+		</select>月
+	</p>
+	<p class="name">名称或者事宜:<br/><textarea class="text-kk ry"  id="mcsy" name="mcsy">{$va[0]['mcsy']}</textarea>
+	<b class="b-tishi" id="b-mcsy"></b>
+	</p>
+	<p class="name">单位或者地点:<br/><textarea class="text-kk ry"  id="dd" name="dd">{$va[0]['dd']}</textarea>
+		<b class="b-tishi" id="b-dd"></b>
+	</p>
+	<div id="hjqk">
+		<p class="name jy">获奖级别:<select class="ry" name="jb">
+            <volist name="jb" id="jb">
+                {$jb}
+            </volist>
+		</select>
+		</p>
+        <p class="name jy">获奖等级:<select class="ry" name="dj">
+            <volist name="hjdj" id="hjdj">
+                {$hjdj}
+            </volist>
+        </select>
+        </p>
+		<p class="name jy">排名:<input id="pm" class="ry" type="text" value="{$va[0]['pm']}" name="pm">
+		<b class="b-tishi" id="b-pm"></b>
+		</p>
+		<p class="name jy">荣誉(简述 如:所撰写的论文，获中国国际经济技术合作促进会优秀论文奖):<textarea id="ch" type="text"  class="text-kk"  name="ch">{$va[0]['ch']}</textarea>
+		<b class="b-tishi" id="b-ch"></b>
+		</p>
+		<p class="name">备注:<br/><textarea class="ry text-kk"  name="bz" id="bz">{$va[0]['bz']}</textarea>
+		<b class="b-tishi" id="b-bz"></b>
+		</p>
+	</div>
+	<if condition="$va[0]['id'] eq null">
+	<p class="name"><button  class="btn save7">增加</button></p>
+	<else/><p class="name"><button  class="btn save7">修改</button></p>
+	</if>
+	</span>
+
+	<div class="daohang">
+			<input type="button" onclick="window.location.href='__URL__/info6'" class="btn" value="上一页">
+				<for start="1" end="17">
+					<input type="button" onclick="window.location.href='__URL__/info{$i}'" class="btn" value="{$i}">
+				</for>
+			<input type="button" onclick="window.location.href='__URL__/info8'" class="btn" value="下一页">
+		</div>
+		<br/>
+
+</div>
+<include file='./Home/Tpl/Common/footer.html' />
+<include file='./Home/Tpl/Common/foot.html' />

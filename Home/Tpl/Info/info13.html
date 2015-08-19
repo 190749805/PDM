@@ -1,0 +1,91 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script src="__PUBLIC__/Js/Info/info13.js"></script>
+<script src="__PUBLIC__/Js/Info/total.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/three.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+<form action="__URL__/commit_info13" method="post">
+<input name="hidden" type="hidden" value="{$va[0]['id']}"/>
+<div class="center">
+<p class="title">科研获奖</p>
+<table class="info_table">
+		<tr>
+			<th>获奖时间</th><th>科研成果</th><th>获奖名称</th><th>获奖单位</th><th>获奖级别</th>
+			<th>获奖排名</th><th>操作</th>
+		</tr>
+		<volist name="list" id="vo">
+		<tr>
+		<th>{$vo.sj}</th><th>{$vo.cg}</th><th>{$vo.mc}</th><th>{$vo.dw}</th><th>{$vo.jb}</th><th>{$vo.pm}</th>
+		<th>
+			<a href="__URL__/info13/id/{$vo.id}">修改</a>
+			<a href="__URL__/delete_info13/id/{$vo.id}">删除</a>
+		</th>
+		</tr>	
+		</volist>
+	</table>
+<br/>
+			<input class="btn save13"  type="submit" value="保存"/>
+			<br/>
+			<br/>
+    <p class="name">科研获奖有无情况<select name="qk">
+        <volist name="ywqk" id="ywqk">
+            {$ywqk}
+        </volist>
+    </select></p>
+	<p class="name hid">获奖时间:
+		<select name="sjy">
+			<volist name="year" id="year">
+				{$year}
+			</volist>
+			<volist name="yeara" id="yeara">
+				{$yeara}
+			</volist>
+		</select>年
+		<select name="sjm">
+			<volist name="month" id="month">
+				{$month}
+			</volist>
+			<volist name="montha" id="montha">
+				{$montha}
+			</volist>
+		</select>月
+	</p>
+    <p class="name hid">科研成果：<input type="text" id="cg" value="{$va[0]['cg']}" name="cg"/>
+        <b class="b-tishi" id="b-cg"></b>
+    </p>
+	<p class="name hid">获奖名称：<input type="text" id="mc" value="{$va[0]['mc']}" name="mc"/>
+	<b class="b-tishi" id="b-mc"></b>
+	</p>
+
+	<p class="name hid">授奖单位：<input type="text" id="dw" value="{$va[0]['dw']}" name="dw"/>
+	<b class="b-tishi" id="b-dw"></b>
+	</p>
+	<p class="name hid">获奖级别：<input id="jb" value="{$va[0]['jb']}" type="text" name="jb"/>
+	<b class="b-tishi" id="b-jb"></b>
+	</p>
+	<p class="name hid">个人排名：<select name="spm">
+		<volist name="pm" id="pm">
+			{$pm}
+		</volist>
+		<volist name="pma" id="pma">
+			{$pma}
+		</volist>
+		</select>
+        <input type="text" name="qita" value="{$va[0]['pm']}">
+	</p>
+	
+	<if condition="$va[0]['id'] eq null">
+	<p class="name"><button class="btn save13 hid">增加</button></p>
+	<else/><p class="name"><button class="btn save13">修改</button></p>
+	</if>
+	<div class="daohang">
+			<input type="button" onclick="window.location.href='__URL__/info12'" class="btn" value="上一页">
+				<for start="1" end="17">
+					<input type="button" onclick="window.location.href='__URL__/info{$i}'" class="btn" value="{$i}">
+				</for>
+			<input type="button" onclick="window.location.href='__URL__/info14'" class="btn" value="下一页">
+		</div>
+		<br/>
+	</form>
+</div>
+<include file='./Home/Tpl/Common/footer.html' />
+<include file='./Home/Tpl/Common/foot.html' />

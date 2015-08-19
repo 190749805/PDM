@@ -1,0 +1,49 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script type="text/javascript" src="__PUBLIC__/Js/two.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+<script src="__PUBLIC__/Js/limitLogin.js"></script>
+<div class="center">
+    <br/>
+    <h2>限制用户登陆：</h2>
+    <br/>
+    <form action="__URL__/setLoginTime" method="POST">
+        <button id="btn-tj">提交</button>
+        <br/><br/><br/>
+    <p class="name">管 理 员:
+        <select name="gly">
+            <volist name="gly" id="gly">
+                {$gly}
+            </volist>
+        </select>年
+    <select name="glm">
+        <volist name="glm" id="glm">
+            {$glm}
+        </volist>
+    </select>月
+    <select name="gld">
+        <volist name="gld" id="gld">
+            {$gld}
+        </volist>
+    </select>日</p>
+<br/><br/><br/><br/>
+    <p class="name">普通用户:
+        <select name="pty">
+            <volist name="pty" id="pty">
+                {$pty}
+            </volist>
+        </select>年
+        <select name="ptm">
+            <volist name="ptm" id="ptm">
+                {$ptm}
+            </volist>
+        </select>月
+        <select name="ptd">
+            <volist name="ptd" id="ptd">
+                {$ptd}
+            </volist>
+        </select>日</p>
+    </form>
+    <br/><br/><br/>
+</div>
+<include file='./Home/Tpl/Common/footer.html' />
+<include file='./Home/Tpl/Common/foot.html' />

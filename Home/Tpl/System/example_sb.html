@@ -1,0 +1,20 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script type="text/javascript" src="__PUBLIC__/Js/three.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+<div class="center">
+    <table style="width: 790px;margin: 0px 50px;">
+        <tr>
+            <td style="text-align:center;font-weight:bold;font-size:24px;padding:40px 70px 0px 0px;">查看申报表示例</td>
+        </tr>
+        <?php
+			for( $i = 1 ; $i <= 8 ; $i ++ ){
+				echo '<tr><td style="text-align:center;font-weight:bold;font-size:24px;padding:40px 70px 0px 0px;"><img src="__PUBLIC__/Img/sb_'.$i.'.png"/></td></tr>';
+			}
+		?>
+		<tr>
+			<td><br/></td>
+		</tr>
+    </table>
+</div>
+<include file='./Home/Tpl/Common/footer.html' />
+<include file='./Home/Tpl/Common/foot.html' />

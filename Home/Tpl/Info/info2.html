@@ -1,0 +1,198 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script src="__PUBLIC__/Js/Info/info2.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/three.js"></script>
+
+<script src="__PUBLIC__/Js/Info/total.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+	
+	<div class="center">
+		
+		<form action="__URL__/commit_info2" method="post">
+			<br/>
+			<p class="title">基本信息填写</p>
+					<if condition="$list[0]['xcszy'] eq null">
+					<button class="btn"  type="submit" id="save2">保存</button>
+					<else/><button class="btn"  type="submit" id="save2">修改</button>
+					</if>
+					<br/>
+					<br/>
+					<input type="button" onclick="window.location.href='__URL__/delete_info2/id/{$list[0]['id']}'" class="btn" value="删除"/>
+			<p class="name">参与党派:<select class="st{$contl['hscjdp']}" name="dp" id="dp">
+					<volist name="dp" id="dp">
+						{$dp}
+					</volist>
+				</select></p>
+			<p class="name">何时参加党派：
+				<select class="st{$contl['hscjdp']}" name="hscjdpy" id="hscjdpy">
+					<volist name="year" id="year">
+						{$year}
+					</volist>
+				</select>年
+				<select class="st{$contl['hscjdp']}" name="hscjdpm" id="hscjdpm">
+					<volist name="month" id="month">
+						{$month}
+					</volist>
+				</select>月
+			</p>
+						<p class="name">健康状况：<select class="st{$contl['jkzk']}" name="jkzk" id="jkzk">
+					<volist name="jkzk" id="jkzk">
+						{$jkzk}
+					</volist>
+				</select>
+			</p>
+
+			<p class="name">现任专业技术职务:
+				<br/>
+				<input type="hidden" value="{$xrjszwArr}" id="hid-xrjszw"/>
+					<span id="span-xrjszw">
+					<select class="select-jszw" name="xrjszw[]" id="xrjszw1" >
+					<volist name="xrjszw" id="xrjs">
+						{$xrjs}
+					</volist>
+					</select>
+					任职务时间:
+						<select name="xrzwsjy[]" id="xrzwsjy1">
+							<volist name="year1" id="year1">
+								{$year1}
+							</volist>
+						</select>年
+						<select name="xrzwsjm[]"  id="xrzwsjm1">
+							<volist name="month1" id="month1">
+								{$month1}
+							</volist>
+						</select>月
+
+					</span>
+				
+					<volist name="xrjszwArr" id="xrzw">
+					<p class="name"><select class="select-jszw st{$contl['zwhsj']}" name="xrjszw[]" >
+						{$xrzw.xrjszw}
+					</select>
+					任职务时间:
+					<select name="xrzwsjy[]" class="st{$contl['zwhsj']}">
+						<volist name="xrzw['jszwsjy']" id="zwsjy">
+						{$zwsjy}
+						</volist>
+					</select>年
+					<select name="xrzwsjm[]" class="st{$contl['zwhsj']}">
+						<volist name="xrzw['jszwsjm']" id="zwsjm">
+						{$zwsjm}
+						</volist>
+					</select>月
+					<button type="button" class="btn-qx1 st{$contl['zwhsj']}" >取消</button></p>
+					</volist>
+			</p>
+			<p class="name">
+				<button id="zj" class="st{$contl['zwhsj']}"" type="button">增加</button><b class="b-tishi" id="b-xrjszw"></b>
+			</P>
+			<p class="name"><span id="span_zj">
+			</span></p>
+			<p class="name">高校教龄:<select name="xl" class="st{$contl['xl']}"" id="xl">
+			<volist name="xl" id="xl">
+				{$xl}
+			</volist>
+			</select>年
+			</p>
+			
+			<p class="name">参加工作时间:
+				<select name="cjgzsjy" class="st{$contl['cjgzsj']}" id="cjgzsjy">
+					<volist name="year2" id="year2">
+						{$year2}
+					</volist>
+				</select>年
+				<select name="cjgzsjm" class="st{$contl['cjgzsj']}" id="cjgzsjm">
+					<volist name="month2" id="month2">
+						{$month2}
+					</volist>
+				</select>月
+			</p>
+			<p class="name">
+			现任专业技术职务任职资格评委会和审批机关：<br/>
+                <select name="pwhsp" class="st{$contl['pwhsp']}">
+                    <volist name="pwhsp" id="pwhsp">
+                        {$pwhsp}
+                    </volist>
+                </select>
+
+                <input type="text" name="sp" class="st{$contl['pwhsp']}" value="{$list[0]['pwhsp']}">
+			<b class="b-tishi" id="b-pwhsp"></b>
+			</p>
+			<p class="name zyzc">现从事专业:
+                <input class="st{$contl['zyzc']} zyzc" type="text" name="xcszy[]">
+		   &nbsp;专长:<input class="st{$contl['zyzc']} zyzc" type="text" name="xcszc[]">
+                <button type="button" class="btn-qx2" >取消</button>
+            </p>
+
+            <input type="hidden" name="hidden-zyzc" value="<if condition="$zyzc neq null">1<else />0</if>">
+            <volist name="zyzc" id="zyzc">
+                <p class="name">现从事专业:
+                    <input class="st{$contl['zyzc']} zyzc" type="text" name="xcszy[]" value="{$zyzc.zy}">
+                    &nbsp;专长:<input class="st{$contl['zyzc']} zyzc" type="text" name="xcszc[]" value="{$zyzc.zc}">
+                    <button type="button" class="btn-qx2 st{$contl['zyzc']}" >取消</button>
+                </p>
+            </volist>
+             <span id="span-zyzc"></span>
+            <p class="name"><button id="red1" type="button" class="st{$contl['zyzc']}">增加</button></p>
+            <b class="b-tishi" id="b-zyzc"></b>
+			<input type="hidden" value="{$list[0]['xkz']}" id="hidden-xkz"/>
+			<p class="name">校内学科组:<select name="xnxkz" class="st{$contl['xkz']}">
+				<volist name="xnxkz" id="xnxkz">
+					{$xnxkz}
+				</volist>
+				</select>
+			</p>
+			<p class="name">校外学科组:<select name="xwxkz" class="st{$contl['xkz']}">
+				<volist name="xwxkz" id="xwxkz">
+					{$xwxkz}
+				</volist>
+				</select>
+                <input type="hidden" name="hid-xkz" value="{$npzw}">
+			</p>	
+			<p class="name">学科:<select class="st{$contl['xk']}" name="yjxk" id="yjxk">
+				<volist name="yjxk" id="yjxk">
+					{$yjxk}
+				</volist>
+			</select></p>
+
+			<p class="name ttzw">参加何学术团体:<input type="text" class="ttzw" name="cjxstt[]">
+			任何职务:<input class="ttzw" type="text"  name="rhzw[]">
+            <button type="button" class="btn-qx3">取消</button></p>
+            <input type="hidden" name="hid-ttzw" value="{$ttzw}" >
+            <volist name="ttzw" id="ttzw">
+                <p class="name">参加何学术团体:
+                    <input class="st{$contl['xsttzw']} ttzw" type="text" value="{$ttzw.tt}" name="cjxstt[]">
+                    任何职务:<input class="st{$contl['xsttzw']} ttzw" type="text" value="{$ttzw.zw}" name="rhzw[]">
+                    <button type="button" class="btn-qx3 st{$contl['xsttzw']}">取消</button></p>
+            </volist>
+            <span id="span-ttzw"></span>
+            <p class="name"><button class="st{$contl['xsttzw']}" type="button" id="red2">增加</button>
+                <b class="b-tishi" id="b-ttzw"></b></p>
+
+           <input type="hidden" value="{$list[0]['drdzzw']}" name="hid-zw">
+            <p class="name dzzw">担(兼)任党政职务:<input type="text" class="st{$contl['dzzw']}" name="drdzzw[]"></p>
+            <volist name="dzzw" id="dzzw">
+                <p class="name">担(兼)任党政职务:<input type="text" class="st{$contl['dzzw']}" name="drdzzw[]" value="{$dzzw}"></p>
+            </volist>
+            <span id="span-dz"></span>
+            <p class="name"><button class="st{$contl['dzzw']}" type="button" id="red3">增加</button></p>
+
+            <input type="hidden" value="{$list[0]['shjz']}" name="hid-jz">
+            <p class="name shjz">社会兼职:<input type="text" class="st{$contl['shjz']}"  name="shjz[]"></p>
+			<volist name="shjz" id="shjz">
+               <p class="name">社会兼职:<input type="text" class="st{$contl['shjz']}" name="shjz[]" value="{$shjz}"></p>
+			</volist>
+            <span id="span-jz"></span>
+            <p class="name"><button class="st{$contl['shjz']}" type="button" id="red4">增加</button></p>
+            <div class="daohang">
+						<input type="button" onclick="window.location.href='__URL__/info1'" class="btn" value="上一页">
+						<for start="1" end="17">
+							<input type="button" onclick="window.location.href='__URL__/info{$i}'" class="btn" value="{$i}">
+						</for>
+						<input type="button" onclick="window.location.href='__URL__/info3'" class="btn" value="下一页">
+			</div>
+			<br/>
+		</form>
+		
+	</div>
+<include file='./Home/Tpl/Common/footer.html' />
+<include file='./Home/Tpl/Common/foot.html' />

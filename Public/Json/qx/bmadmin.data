@@ -1,0 +1,11 @@
+qx			:	bmadmin
+bm			:	bm
+index		:	查看基本信息
+changepass	:	修改个人密码
+select_user	:	查看全部用户
+add			:	添加普通用户
+chmod_user  :   修改用户状态
+userexit	:	立即退出系统
+audit_user	:	一审用户
+audit_two_user	:	二审用户
+auditThreeUser	:	三审用户

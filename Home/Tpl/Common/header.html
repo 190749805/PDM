@@ -1,0 +1,106 @@
+<?php 
+	echo	'<script language="javascript">
+			if(screen.width > "1024"){
+				$("<link>").attr({ rel: "stylesheet",
+					type: "text/css",
+					href: "/PDM/Public/Css/info_1366.css"
+				}).appendTo("head");
+			}
+			if(screen.width <= "1024"){
+				$("<link>").attr({ rel: "stylesheet",
+					type: "text/css",
+					href: "/PDM/Public/Css/info_1024.css"
+				}).appendTo("head");
+			}
+			</script>';
+?>
+<link rel="stylesheet" href="__PUBLIC__/Css/jquery-ui-1.10.0.custom.css">
+<script src="__PUBLIC__/Js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.cityselect.js"></script>
+
+	<title>用户中心</title>
+
+	</head>
+	<body>
+		
+		<div id="show-right">&gt;&gt;</div>
+		<div id="leftnva">
+			<volist name="operate" id="operate">
+						<div class="show-info" id="hide">&lt;&lt;</div>
+						<p class="option-info">系统首页</p>
+					
+						{$operate.index}
+						{$operate.changepass}
+						{$operate.select_user}
+						{$operate.apply}
+						{$operate.add}
+						{$operate.add_admin}
+						{$operate.changchmod}
+                        {$operate.chmod_user}
+						{$operate.up_user}
+						{$operate.viewLoginTime}
+						{$operate.userexit}
+					
+						<p class="option-info">审核相关</p>
+					
+						{$operate.audit_user}
+						{$operate.audit_two_user}
+						{$operate.auditThreeUser}
+						{$operate.audit_result}
+
+						<p class="option-info">信息填写</p>
+					
+						{$operate.tishi}
+                        {$operate.example}
+						{$operate.info1}
+					
+						<p class="option-info">预览打印</p>
+				
+					
+						{$operate.check}
+						{$operate.preview}
+						{$operate.printpdf}
+				
+			</volist>
+		</div>
+		<div class="top">
+					<img src="__PUBLIC__/Img/cuit.jpg" class="cuit"/>
+			<img src="__PUBLIC__/Img/system.jpg" class="system"/>
+		</div>
+		<script>
+			$(function(){
+				var strCookie=document.cookie;
+				var tempNavStatus;
+				var arrCookie = strCookie.split("; ");
+				for(var i=0;i<arrCookie.length;i++){ 
+					var arr=arrCookie[i].split("="); 
+					//找到名称为userId的cookie，并返回它的值 
+					if("tempNavStatus" == arr[0]){ 
+						tempNavStatus = arr[1]; 
+						break; 
+					} 
+				}
+				if(tempNavStatus == '000'){
+					$('#leftnva').hide();
+					$('#show-right').css('display','block');
+				}
+				if(tempNavStatus == '111'){
+					$('#leftnva').show();
+					$('#show-right').css('display','none');
+				}
+			})
+			$(function(){
+				$('#hide').click(function(){
+					$('#leftnva').hide();
+					$('#show-right').css('display','block');
+					document.cookie="tempNavStatus=000";
+				})
+			})
+			$(function(){
+				$('#show-right').click(function(){
+					$('#leftnva').show();
+					$('#show-right').css('display','none');
+					document.cookie="tempNavStatus=111";	
+				})
+			})
+		</script>

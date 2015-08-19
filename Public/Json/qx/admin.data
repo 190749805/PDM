@@ -1,0 +1,9 @@
+qx			:	admin
+bm			:	system
+index		:	查看基本信息
+changepass	:	修改个人密码
+select_user	:	查看全部用户
+add			:	添加普通用户
+add_admin	:	添加管理用户
+viewLoginTime : 用户登陆控制
+userexit	:	立即退出系统

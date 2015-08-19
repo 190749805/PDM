@@ -1,0 +1,107 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script src="__PUBLIC__/Js/Info/info11.js"></script>
+<script src="__PUBLIC__/Js/Info/total.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/three.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+<form action="__URL__/commit_info11" method="post">
+<input type="hidden" value="{$va[0]['id']}" name="hidden"/>
+<div class="center"><p class="title">发表的论文</p>
+<table class="info_table">
+		<tr>
+			<th>论文题目</th><th>发表时间</th><th>是否增刊</th><th>刊物级别</th><th>收录期刊名称</th>
+			<th>本人排名</th><th>检索类别及检索号</th><th>操作</th>
+		</tr>
+		<volist name="list" id="vo">
+		<tr>
+		<th>{$vo.title}</th><th>{$vo.time}</th><th>{$vo.status}</th><th>{$vo.jb}</th><th>{$vo.slmc}</th>
+		<th>{$vo.pm}</th><th>{$vo.js}</th>
+		<th>
+			<a href="__URL__/info11/id/{$vo.id}">修改</a>
+			<a href="__URL__/delete_info11/id/{$vo.id}">删除</a>
+		</th>
+		</tr>	
+		</volist>
+	</table>
+<br/>
+			<input class="btn save11"  type="submit" value="保存"/>
+			<br/>
+			<br/>
+    <p class="name">发表论文情况:<select name="qk">
+        <volist name="ywqk" id="ywqk">
+            {$ywqk}
+        </volist>
+    </select></p>
+	<p class="name hid">论文题目：<input type="text" id="title" value="{$va[0]['title']}" name="title"/>
+	<b class="b-tishi" id="b-title"></b>
+	</p>
+	<p class="name hid">发表时间:
+		<select name="timey">
+			<volist name="year" id="year">
+				{$year}
+			</volist>
+			<volist name="yeara" id="yeara">
+				{$yeara}
+			</volist>
+		</select>年
+		<select name="timem">
+			<volist name="month" id="month">
+				{$month}
+			</volist>
+			<volist name="montha" id="montha">
+				{$montha}
+			</volist>
+		</select>月
+	</p>
+	<p class="name hid">收录期刊名称：<input type="text" id="slmc" value="{$va[0]['slmc']}" name="slmc">
+	<b class="b-tishi" id="b-slmc"></b>
+	</input></p>
+	
+	<p class="name hid">刊物级别：
+		<select name="sjb" id="sjb">
+		<volist name="jb" id="jb">
+			{$jb}
+		</volist>
+		<volist name="jba" id="jba">
+			{$jba}
+		</volist>
+		</select>
+	</p>
+	<p class="name hid">是否增刊：<select name="status">
+		<volist name="zk" id="zk">
+			{$zk}
+		</volist>
+		<volist name="zka" id="zka">
+			{$zka}
+		</volist>
+		</select>
+	</p>
+	<p class="name hid">本人排名：<select name="spm">
+		<volist name="pm" id="pm">
+			{$pm}
+		</volist>
+		<volist name="pma" id="pma">
+			{$pma}
+		</volist>
+		</select>作者
+        <input type="text" value="{$va[0]['pm']}" name="qita">
+	</p>
+	<p class="name hid">检索类别及检索号:<input id="js" value="{$va[0]['js']}" type="text" name="js" />
+	<b class="b-tishi" id="b-js"></b>
+	</p>
+
+	<if condition="$va[0]['id'] eq null">
+	<p class="name"><button class="btn save11 hid">增加</button></p>
+	<else/><p class="name"><button class="btn save11">修改</button></p>
+	</if>
+	<div class="daohang">
+			<input type="button" onclick="window.location.href='__URL__/info10'" class="btn" value="上一页">
+				<for start="1" end="17">
+					<input type="button" onclick="window.location.href='__URL__/info{$i}'" class="btn" value="{$i}">
+				</for>
+			<input type="button" onclick="window.location.href='__URL__/info12'" class="btn" value="下一页">
+		</div>
+		<br/>
+	</form>
+</div>
+<include file='./Home/Tpl/Common/footer.html' />
+<include file='./Home/Tpl/Common/foot.html' />

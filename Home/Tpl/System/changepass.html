@@ -1,0 +1,41 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script type="text/javascript" src="__PUBLIC__/Js/one.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+		
+<div class="center">
+	<br/>
+	<p id="time">&nbsp;&nbsp;&nbsp;当前日期:<?php date_default_timezone_set('PRC'); echo date('Y/m/d');?></p>
+	<p class="info" style="margin-left:100px;">修改密码（普通）</p>
+	<form action="__URL__/change_pass" method="post">
+		<volist name="info" id="info">
+
+		<input type="submit" class="btn" value="修改"/>
+		<br/><br/>
+		<input type="reset" class="btn" value="取消"/><br/><br/>
+		<P style="margin-left:250px;font-size:18px;">用 户 名：</p>
+		<input type="text" style="margin-left:250px;width:300px;" Readonly="true" name="username" id="name" value="{$info.username}" class=""/>
+		<br/><br/>
+
+		<p style="margin-left:250px;font-size:18px;">原 &nbsp;密 &nbsp; 码：</p>
+
+		<input type="password" style="margin-left:250px;width:300px;" name="oldpassword" id="oldpassword"  class=""/>
+		<br/><br/>
+		
+		<p style="margin-left:250px;font-size:18px;">新 &nbsp;密 &nbsp; 码：</p>
+
+		<input  style="margin-left:250px;width:300px;" type="password" name="newpassword"  id="newpassword"  class=""/>
+		<br/><br/>
+		
+		<p style="margin-left:250px;font-size:18px;">确认密码：</p>
+
+		<input  style="margin-left:250px;width:300px;" type="password" name="newpasswordagain"  id="newpasswordagain"  class=""/>
+		<br/><br/><br/>
+
+		</volist>
+	</form>
+
+</div>
+			
+		
+<include file='./Home/Tpl/Common/footer.html' />		
+<include file='./Home/Tpl/Common/foot.html' />

@@ -1,0 +1,89 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script type="text/javascript" src="__PUBLIC__/Js/two.js"></script>
+<script src="__PUBLIC__/Js/audit.js"></script>
+<script src="__PUBLIC__/Js/reason.js"></script>
+<css href="__PUBLIC__/Css/print.css" />
+<style text="css/text">
+    .cl1{
+        color:green;
+    }
+    .cl2{
+        color:red;
+    }
+    .shenhe-head{
+        margin-left: 20px;
+    }
+</style>
+<include file='./Home/Tpl/Common/header.html' />
+<div class="center">
+    <br/>
+    <h3 class="shenhe-head">*通过是<span style="color:green">绿色</span>，没有通过是<span style="color:red">红色</span></h3>
+    <form action="__URL__/auditTwoSjk" method="POST">
+        <button class="btn shenhe-head" id="tj">提交</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn" id='all-select'>全选(全部通过)</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn" id='all-unselect'>取消(全部重置为未审核)</button>
+        <h3>现任职务:{$bt[2]}</h3>
+        <h3>时间:{$bt[0]}年{$bt[1]}月</h3>
+        <br/><br/></br>
+        <center>
+        <input type="hidden" name="hidden" value="{$idUser}">
+        <table cellpadding="2" class="tb" cellspacing="0" border="1" align=center width="740px">
+            <tr>
+                <td class="td-a" colspan="8"><strong><br/>任  现  职  以  来  完  成  教  学  工  作  情 况</strong></td >
+            </tr>
+            <tr>
+                <td class="td-a"><strong>自何年何月</strong></td >
+                <td class="td-a"><strong>至何年何月</strong></td >
+                <td class="td-a"><strong>讲授课程名称及其它教学<br/>任       务</strong></td >
+                <td class="td-a"><strong>学生<br/>人数</strong></td >
+                <td class="td-a"><strong>周学<br/>时数</strong></td >
+                <td class="td-a"><strong>总学<br/>时数</strong></td >
+                <td class="td-a"><strong>备 注</strong></td >
+                <td class="td-a"><strong>审核情况</strong></td >
+            </tr>
+            <volist name="info9" id="jxgz">
+                <tr class="cl{$jxgz.jxgzqk}">
+                    <td class="td-a"><br/>{$jxgz.kssj}<br/><br/></td >
+                    <td class="td-a"><br/>{$jxgz.jssj}<br/><br/></td >
+                    <td class="td-a"><br/>{$jxgz.mcrw}<br/><br/></td >
+                    <td class="td-a"><br/>{$jxgz.xsrs}<br/><br/></td >
+                    <td class="td-a"><br/>{$jxgz.zhxss}<br/><br/></td >
+                    <td class="td-a"><br/>{$jxgz.zxss}<br/><br/></td >
+                    <td class="td-a"><br/>{$jxgz.bz}<br/><br/></td >
+                    <td class="td-a">
+                        <select name="jxgz{$jxgz.id}" content="xzwcgz*{$jxgz.id}" class="tishi" id="ckb[]">
+                            <volist name="list" id="vo">
+                                {$vo}
+                            </volist>
+                            <volist name="jxgz['cp_jxgzqk']" id="vjxgzqk">
+                                {$vjxgzqk}
+                            </volist>
+                        </select>
+                        <span id="span_jxgz{$jxgz.id}"></span></td >
+                </tr>
+            </volist>
+        </table>
+    </form>
+    <br/><br/><br/>
+</div>
+<input name="dealing-select" id="dealing-select" type="hidden" data="null"/>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <code class="modal-title" id="myModalLabel">请填写未通过原因</code>
+            </div>
+            <div class="modal-body" style="padding:0;">
+                <textarea id="reason" style="width:100%;height:200px;"></textarea>
+            </div>
+            <div class="modal-footer" style="padding:19px 20px 0px 20px;margin-top:0px;">
+                <button type="button" class="btn btn-default"  id="save-reason">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<include file='./Home/Tpl/Common/footer.html' />
+<include file='./Home/Tpl/Common/foot.html' />

@@ -1,0 +1,1 @@
+var allReasonArr = new Array;allReasonArr[0] = new Array("信息不正确","wangwu"YY);allReasonArr[1] = new Array("信息不正确","");allReasonArr[2] = new Array("信息不正确","");allReasonArr[3] = new Array("信息不正确","");

@@ -1,0 +1,95 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script src="__PUBLIC__/Js/Info/info14.js"></script>
+<script src="__PUBLIC__/Js/Info/total.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/three.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+<form action="__URL__/commit_info14" method="post">
+<input type="hidden" value="{$va[0]['id']}" name="hidden">
+<div class="center">
+<p class="title">发明专利</p>
+<table class="info_table">
+		<tr>
+			<th>授权时间</th><th>专利名称</th><th>专利类型</th><th>是否授权</th>
+			<th>授权专利号</th><th>操作</th>
+		</tr>
+		<volist name="list" id="vo">
+		<tr>
+		<th>{$vo.tgsj}</th><th>{$vo.mc}</th><th>{$vo.lx}</th><th>{$vo.sq}</th>
+		<th>{$vo.zlh}</th>
+		<th>
+			<a href="__URL__/info14/id/{$vo.id}">修改</a>
+			<a href="__URL__/delete_info14/id/{$vo.id}">删除</a>
+		</th>
+		</tr>	
+		</volist>
+	</table>
+	<br/>
+	<br/>
+	
+	<button class="btn save14">保存</button>
+	<p class="name">专利有无情况:
+        <select name="qk">
+            <volist name="ywqk" id="ywqk">
+                {$ywqk}
+            </volist>
+        </select>
+	</p>
+	<p class="name hid">专利名称：<input id="mc" value="{$va[0]['mc']}" type="text" name="mc">
+	<b class="b-tishi" id="b-mc"></b>
+	</p>
+	<p class="name hid">专利类型：<select name="slx">
+		<volist name="lx" id="lx">
+			{$lx}
+		</volist>
+		<volist name="lxa" id="lxa">
+			{$lxa}
+		</volist>
+		</select>
+	</p>
+	
+	<!--<p class="name hid">是否授权：<select name="ssq">
+		<volist name="sq" id="sq">
+			{$sq}
+		</volist>
+		<volist name="sqa" id="sqa">
+			{$sqa}
+		</volist>
+		</select>
+	</p>-->
+    <p class="name hid">授权时间:
+        <select name="tgsjy">
+            <volist name="year" id="year">
+                {$year}
+            </volist>
+            <volist name="yeara" id="yeara">
+                {$yeara}
+            </volist>
+        </select>年
+        <select name="tgsjm">
+            <volist name="month" id="month">
+                {$month}
+            </volist>
+            <volist name="montha" id="montha">
+                {$montha}
+            </volist>
+        </select>月
+    </p>
+	<p class="name hid">授权专利号:<input id="zlh" value="{$va[0]['zlh']}" type="text" name="zlh">
+	<b class="b-tishi" id="b-zlh"></b>
+	</p>
+	<if condition="$va[0]['id'] eq null">
+	<p class="name"><button class="btn save14 hid">增加</button></p>
+	<else/><p class="name"><button class="btn save14">修改</button></p>
+	</if>
+	<div class="daohang">
+			<input type="button" onclick="window.location.href='__URL__/info13'" class="btn" value="上一页">
+				<for start="1" end="17">
+					<input type="button" onclick="window.location.href='__URL__/info{$i}'" class="btn" value="{$i}">
+				</for>
+			<input type="button" onclick="window.location.href='__URL__/info15'" class="btn" value="下一页">
+		</div>
+		<br/>
+	</form>
+</div>
+<include file='./Home/Tpl/Common/footer.html' />
+<include file='./Home/Tpl/Common/foot.html' />

@@ -1,0 +1,37 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script type="text/javascript" src="__PUBLIC__/Js/one.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+		
+<div class="center">
+	<br/>
+	<p id="time">&nbsp;&nbsp;&nbsp;当前日期:<?php date_default_timezone_set('PRC'); echo date('Y/m/d');?></p>
+	<p class="info" style="margin-left:100px;">基本信息</p><br/><br/>
+
+	<volist name="info" id="info">
+		<p class="info" style="margin-left:200px;margin-top:100px;">姓名:	{$info.name}</p>
+		<p class="info" style="margin-left:500px;margin-top:-40px;">照片:	</p>
+		<img class="img-photo" style="margin-left:600px;margin-top:-180px;" src="{$info.zplj}" />
+		
+		<p class="info" style="margin-left:200px;margin-top:60px;">部门:	{$info.bm}</p>
+		<p class="info" style="margin-left:500px;margin-top:-40px;">权限:	{$info.qx}</p>
+		
+		<p class="info" style="margin-left:200px;margin-top:90px;">状态:	{$status}</p>
+		<p class="info" style="margin-left:500px;margin-top:-40px;">{$change_to_audit}</p>
+	</volist>
+	<br/><br/><br/><br/><br/>
+</div>
+<script language="javascript">
+    $(function(){
+	$('#change_to_audit').click(function(){
+		if(confirm('提交审核后进入待审核状态，不能修改以填写的信息')){
+			$('.text-kk').attr('disabled',false);
+			window.location.href='/PDM/index.php?s=/Info/change_to_audit';
+		}else{
+			return false;
+		}
+	})
+})
+</script>
+		
+<include file='./Home/Tpl/Common/footer.html' />		
+<include file='./Home/Tpl/Common/foot.html' />

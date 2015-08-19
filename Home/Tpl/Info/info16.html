@@ -1,0 +1,92 @@
+<include file='./Home/Tpl/Common/head.html' />
+<script src="__PUBLIC__/Js/Info/info16.js"></script>
+<script src="__PUBLIC__/Js/Info/total.js"></script>
+<css href="__PUBLIC__/Css/info.css"></css>
+<script type="text/javascript" src="__PUBLIC__/Js/three.js"></script>
+<include file='./Home/Tpl/Common/header.html' />
+<form action="__URL__/commit_info16" method="post">
+<div class="center">
+<br/>
+<input class="btn save16" type="submit" value="保存">
+<br/><br/>
+<input type="button" onclick="window.location.href='__URL__/delete_info16/id/{$list['id']}'" class="btn" value="删除">
+	
+			
+			<p class="name">个人总结(任现职以来的思想政治表现，教学、科学研究等工作的能力及履行职责的情况、成绩等
+				<b class="b-tishi" id="b-brzj"></b>
+				<p class="name">
+				<textarea class="text-kk st{$contl['grzj']}"  name="grzj" id="brzj">{$list['brzj']}</textarea></p>
+
+			<p class="name">教学任务概述:
+				<b class="b-tishi" id="b-rwgs"></b><br/>
+				(例:任现职以来，主讲《计算机应用基础》、《外贸英语》等2门本科课程，共986学时，学生听课人数770人，
+				学生评教均为“优秀”；共指导学生毕业论文24人，有3人获得优秀毕业论文，年平均授课学时超过学校要求的工作量。)
+                <br/><textarea class="text-kk st{$contl['jxrwzs']}"  id="rwgs" name="rwgs">{$list['rwgs']}</textarea>
+	
+			<p class="name">获奖情况综述:
+				<b class="b-tishi" id="b-hjzs"></b>
+				<br/>
+				(例:1.2012年，负责组织新生入学专业教育讲座，获院内评比一等奖)
+				<textarea class="text-kk st{$contl['hjzs']}" id="hjzs"  name="hjzs">{$list['hjzs']}</textarea></p>	
+
+			<p class="name">教学管理、教学改革工作综述:
+				<b class="b-tishi" id="b-jxggzs"></b>
+				<br/>
+				任现职以来，分管网络安全教研室日常教学管理工作，积极推进2012信息对抗专业人才培养方案的调整与完善工作，
+				参与2012年教育教学一体化改革项目（获校级一等奖），组织本专业毕业论文答辩，围绕网络安全专业建设主线，
+				鼓励创新课程教学，协助上级推进教学质量提升和专业建设
+				<br/><textarea class="text-kk st{$contl['jxggzs']}" id="jxggzs"  name="gggz">{$list['gggz']}</textarea>
+			</p>
+
+			<p class="name">指导研究生情况：
+				<b class="b-tishi" id="b-zdyjs"></b>
+				<br/>
+				<textarea class="text-kk st{$contl['zdyjs']}" id="zdyjs" name="zdyjs">{$list['zdyjs']}</textarea>
+			</p>
+			<p class="name">指导教师进修提高情况：
+				<b class="b-tishi" id="b-zdjstg"></b>
+				<br/>
+				<textarea class="text-kk st{$contl['zdjs']}" id="zdjstg" name="zdjstg">{$list['zdjstg']}</textarea>
+			</p>
+			<p class="name">对实验室建设的贡献：
+				<b class="b-tishi" id="b-sysgx"></b>
+				<br/>
+				<textarea class="text-kk st{$contl['sysgx']}" id="sysgx" name="sysgx">{$list['sysgx']}</textarea>
+			</p>
+			<p class="name">外语程度：
+				<b class="b-tishi" id="b-wycd"></b>
+				<br/>
+				<textarea class="text-kk st{$contl['wycd']}" id="wycd" name="wycd">{$list['wycd']}</textarea>
+			</p>
+			<p class="name">计算机应用水平：
+				<b class="b-tishi" id="b-jsjsp"></b>
+				<br/>
+				<textarea class="text-kk st{$contl['jsjsp']}" id="jsjsp" name="jsjsp">{$list['jsjsp']}</textarea>
+			</p>
+	
+			<p class="name">主要论文、著作综述：
+				<b class="b-tishi" id="b-lwzzzs"></b><br/>
+				(例:任现职以来，出版教材2部，论著3部。其中一部教材为“十·五”国家规划教材)
+				<br/><textarea class="text-kk st{$contl['lwzzzs']}" id="lwzzzs" name="zpzs">{$list['zpzs']}</textarea>
+			</p>
+	
+			<p class="name">科研项目及获奖情况综述:
+				<b class="b-tishi" id="b-kyhjzs"></b>
+				<br/>
+				(例:主持省级科研项目一项，主持院级科研项目一项，承担省级教改项目两项，
+				参与省级精品课程建设两门，获四川省教学成果奖二等奖两项)
+				<br/><textarea class="text-kk  st{$contl['kyhjzs']}" id="kyhjzs" name="xmzs">{$list['xmzs']}</textarea>
+			</p>
+	<div class="daohang">
+			<input type="button" onclick="window.location.href='__URL__/info15'" class="btn" value="上一页">
+				<for start="1" end="17">
+					<input type="button" onclick="window.location.href='__URL__/info{$i}'" class="btn" value="{$i}">
+				</for>
+			<input type="button" id="change_to_audit" class="btn" value="提交审核">
+		</div>
+		<br/>
+</div>
+</form>
+
+<include file='./Home/Tpl/Common/footer.html' />
+<include file='./Home/Tpl/Common/foot.html' />
